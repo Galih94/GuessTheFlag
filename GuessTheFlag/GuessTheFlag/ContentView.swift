@@ -18,8 +18,9 @@ struct ContentView: View {
                     .frame(minWidth: 100, maxWidth: .infinity, maxHeight: 100)
             }
             Text("Indonesia")
-                .foregroundStyle(.green)
+                .foregroundStyle(.secondary)
                 .font(.largeTitle)
+                .background(.ultraThinMaterial)
         }
         .ignoresSafeArea()
     }
