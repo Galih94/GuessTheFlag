@@ -9,9 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image(systemName: "pencil")
-            .foregroundStyle(.green)
-            .font(.largeTitle)
+        VStack {
+            Button {
+                print("Button tapped")
+            } label: {
+                Image(systemName: "pencil.circle")
+                    .foregroundStyle(.red)
+                    .font(.largeTitle)
+            }
+            
+        }
         
     }
     
