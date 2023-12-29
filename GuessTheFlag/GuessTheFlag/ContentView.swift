@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         Image(systemName: "pencil")
+            .foregroundStyle(.green)
+            .font(.largeTitle)
         
     }
     
