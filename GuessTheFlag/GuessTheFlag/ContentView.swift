@@ -19,7 +19,7 @@ struct ContentView: View {
             }
             Text("Indonesia")
                 .foregroundStyle(.secondary)
-                .font(.largeTitle)
+                .padding(20)
                 .background(.ultraThinMaterial)
         }
         .ignoresSafeArea()
