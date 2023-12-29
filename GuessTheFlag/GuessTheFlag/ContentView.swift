@@ -13,14 +13,7 @@ struct ContentView: View {
             Button {
                 print("Button tapped")
             } label: {
-                HStack {
-                    Text("Edit")
-                        .foregroundStyle(.red)
-                        .font(.largeTitle)
-                    Image(systemName: "pencil.circle")
-                        .foregroundStyle(.red)
-                        .font(.largeTitle)
-                }
+                Label("Edit", systemImage: "pencil")
             }
             
         }
