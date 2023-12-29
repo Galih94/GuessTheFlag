@@ -21,7 +21,7 @@ struct ContentView: View {
                 .foregroundStyle(.green)
                 .font(.largeTitle)
         }
-        .background(.blue)
+        .ignoresSafeArea()
     }
 }
 
