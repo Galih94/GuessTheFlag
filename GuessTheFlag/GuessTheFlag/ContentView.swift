@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack(spacing: 20) {
+        VStack(spacing: 20) {
             Text("Hello, world!")
             Text("This is another text")
+            Text("This is another another text")
+            Spacer()
         }
     }
 }
