@@ -9,11 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 20) {
+        ZStack {
             Text("Hello, world!")
             Text("This is another text")
             Text("This is another another text")
-            Spacer()
         }
     }
 }
