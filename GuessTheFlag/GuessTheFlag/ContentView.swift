@@ -10,9 +10,18 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Button("Edit", systemImage: "pencil") {
+            Button {
                 print("Button tapped")
-            } 
+            } label: {
+                HStack {
+                    Text("Edit")
+                        .foregroundStyle(.red)
+                        .font(.largeTitle)
+                    Image(systemName: "pencil.circle")
+                        .foregroundStyle(.red)
+                        .font(.largeTitle)
+                }
+            }
             
         }
         
