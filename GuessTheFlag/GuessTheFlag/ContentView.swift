@@ -10,9 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Color.red
-                .frame(minWidth: 100, maxWidth: .infinity, maxHeight: 200)
-            Text("Your content")
+            Color.green
+            VStack(spacing: 0) {
+                Color.red
+                    .frame(minWidth: 100, maxWidth: .infinity, maxHeight: 100)
+                Color.white
+                    .frame(minWidth: 100, maxWidth: .infinity, maxHeight: 100)
+            }
+            Text("Indonesia")
+                .foregroundStyle(.green)
+                .font(.largeTitle)
         }
     }
 }
