@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LinearGradient(colors: [.yellow, .red], startPoint: .top, endPoint: .bottom)
+        LinearGradient(stops: [
+            .init(color: .yellow, location: 0.4),
+            .init(color: .blue, location: 0.6),],
+                       startPoint: .top,
+                       endPoint: .bottom)
     }
 }
 
