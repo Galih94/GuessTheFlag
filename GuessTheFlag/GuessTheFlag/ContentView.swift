@@ -10,13 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Button {
+            Button("Edit", systemImage: "pencil") {
                 print("Button tapped")
-            } label: {
-                Image(systemName: "pencil.circle")
-                    .foregroundStyle(.red)
-                    .font(.largeTitle)
-            }
+            } 
             
         }
         
