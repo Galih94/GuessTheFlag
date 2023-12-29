@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Button("Button 0") { print("Button 0 tapped") }
+                .buttonStyle(.bordered)
+                .tint(.indigo)
             Button("Button 1") { print("Button 1 tapped") }
                 .buttonStyle(.bordered)
             Button("Button 1.5", role: .destructive) { print("Button 1.5 tapped") }
