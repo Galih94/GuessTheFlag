@@ -13,6 +13,7 @@ struct ContentView: View {
             Color.red
             Text("Your content")
         }
+        .background(.red)
     }
 }
 
