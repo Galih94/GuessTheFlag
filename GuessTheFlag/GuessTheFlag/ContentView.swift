@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Button("Delete", action: executeButton)
+        Button("Delete", role: .destructive, action: executeButton)
     }
     
     private func executeButton() {
