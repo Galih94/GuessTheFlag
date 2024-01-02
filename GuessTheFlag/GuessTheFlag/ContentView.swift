@@ -11,7 +11,7 @@ struct ContentView: View {
     var countries = ["Estonia", "France", "Germany",
                      "Ireland", "Italy", "Monaco", 
                      "Nigeria", "Poland", "Spain",
-                     "UK", "Ukraine", "US"]
+                     "UK", "Ukraine", "US"].shuffled()
     var correctAnswer = Int.random(in: 0...2)
     
     var body: some View {
