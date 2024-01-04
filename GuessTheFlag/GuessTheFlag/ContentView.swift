@@ -26,10 +26,10 @@ struct ContentView: View {
                 VStack {
                     Text("Tap the flag of")
                         .foregroundStyle(.white)
-                        .font(.subheadline)
+                        .font(.headline.weight(.semibold))
                     Text(countries[correctAnswer])
                         .foregroundStyle(.white)
-                        .font(.headline)
+                        .font(.largeTitle.weight(.bold))
                 }
                 
                 ForEach(0..<3) { number in
