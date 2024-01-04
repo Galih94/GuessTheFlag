@@ -19,9 +19,8 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.gray
+            LinearGradient(colors: [.blue, .gray], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
-                .blur(radius: 10)
             VStack(spacing: 20) {
                 
                 VStack {
