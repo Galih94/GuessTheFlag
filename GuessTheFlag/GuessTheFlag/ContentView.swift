@@ -25,32 +25,41 @@ struct ContentView: View {
             ], center: .top, startRadius: 100, endRadius: 500)
                 .ignoresSafeArea()
             
-            VStack(spacing: 15) {
+            VStack {
+                Text("GUESS THE FLAG")
+                    .foregroundStyle(.white)
+                    .font(.largeTitle.bold())
                 
-                VStack {
-                    Text("Tap the flag of")
-                        .foregroundStyle(.white)
-                        .font(.headline.weight(.semibold))
-                    Text(countries[correctAnswer])
-                        .foregroundStyle(.white)
-                        .font(.largeTitle.weight(.bold))
-                }
-                
-                ForEach(0..<3) { number in
-                    Button {
-                        flagTapped(number)
-                    } label: {
-                        Image(countries[number])
-                            .clipShape(.capsule(style: .continuous))
-                            .shadow(color: .black, radius: 5)
+                VStack(spacing: 15) {
+                    VStack {
+                        Text("Tap the flag of")
+                            .foregroundStyle(.white)
+                            .font(.headline.weight(.semibold))
+                        Text(countries[correctAnswer])
+                            .foregroundStyle(.white)
+                            .font(.largeTitle.weight(.bold))
                     }
                     
+                    ForEach(0..<3) { number in
+                        Button {
+                            flagTapped(number)
+                        } label: {
+                            Image(countries[number])
+                                .clipShape(.capsule(style: .continuous))
+                                .shadow(color: .black, radius: 5)
+                        }
+                        
+                    }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 20)
+                .background(.regularMaterial)
+                .clipShape(.rect(cornerRadius: 50))
+                
+                Text("SCORE: ???")
+                    .foregroundStyle(.white)
+                    .font(.largeTitle.bold())
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
-            .background(.regularMaterial)
-            .clipShape(.rect(cornerRadius: 50))
         }.alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue") {
                 askQuestion()
