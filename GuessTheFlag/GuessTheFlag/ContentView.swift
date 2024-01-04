@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var countries = ["Estonia", "France", "Germany",
-                     "Ireland", "Italy", "Monaco", 
+                     "Ireland", "Italy", "Monaco",
                      "Nigeria", "Poland", "Spain",
                      "UK", "Ukraine", "US"].shuffled()
     var correctAnswer = Int.random(in: 0...2)
+    @State private var showingScore = false
+    @State private var scoreTitle = ""
     
     var body: some View {
         ZStack {
@@ -30,11 +32,11 @@ struct ContentView: View {
                         .font(.headline)
                 }
                 
-                ForEach(0..<3) { name in
+                ForEach(0..<3) { number in
                     Button {
-                        // what to do on tapped
+                        flagTapped(number)
                     } label: {
-                        Image(countries[name])
+                        Image(countries[number])
                     }
                     
                 }
@@ -43,8 +45,13 @@ struct ContentView: View {
 
     }
     
-    private func executeButton() {
-        print("Deleting...")
+    private func flagTapped(_ number: Int) {
+        if correctAnswer == number {
+            scoreTitle = "You Are Correct"
+        } else {
+            scoreTitle = "Wrong Try Again"
+        }
+        showingScore = true
     }
 }
 
