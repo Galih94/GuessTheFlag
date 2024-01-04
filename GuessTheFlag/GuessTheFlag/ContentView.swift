@@ -33,10 +33,9 @@ struct ContentView: View {
                 VStack(spacing: 15) {
                     VStack {
                         Text("Tap the flag of")
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.secondary)
                             .font(.headline.weight(.semibold))
                         Text(countries[correctAnswer])
-                            .foregroundStyle(.white)
                             .font(.largeTitle.weight(.bold))
                     }
                     
