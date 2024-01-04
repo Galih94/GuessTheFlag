@@ -24,7 +24,8 @@ struct ContentView: View {
                 .init(color: Color(red: 0.1, green: 0.2, blue: 0.3), location: 0.7)
             ], center: .top, startRadius: 100, endRadius: 500)
                 .ignoresSafeArea()
-            VStack(spacing: 20) {
+            
+            VStack(spacing: 15) {
                 
                 VStack {
                     Text("Tap the flag of")
@@ -46,6 +47,10 @@ struct ContentView: View {
                     
                 }
             }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 20)
+            .background(.regularMaterial)
+            .clipShape(.rect(cornerRadius: 50))
         }.alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue") {
                 askQuestion()
