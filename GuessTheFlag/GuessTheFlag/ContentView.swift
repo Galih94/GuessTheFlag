@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var countries = ["Estonia", "France", "Germany",
+    @State private var countries = ["Estonia", "France", "Germany",
                      "Ireland", "Italy", "Monaco",
                      "Nigeria", "Poland", "Spain",
                      "UK", "Ukraine", "US"].shuffled()
-    var correctAnswer = Int.random(in: 0...2)
+    @State private var correctAnswer = Int.random(in: 0...2)
     @State private var showingScore = false
     @State private var scoreTitle = ""
     
@@ -48,10 +48,16 @@ struct ContentView: View {
     private func flagTapped(_ number: Int) {
         if correctAnswer == number {
             scoreTitle = "You Are Correct"
+            askQuestion()
         } else {
             scoreTitle = "Wrong Try Again"
         }
         showingScore = true
+    }
+    
+    private func askQuestion() {
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
     }
 }
 
