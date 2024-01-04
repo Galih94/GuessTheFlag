@@ -41,6 +41,10 @@ struct ContentView: View {
                     
                 }
             }
+        }.alert(scoreTitle, isPresented: $showingScore) {
+            Button("Continue") {
+                askQuestion()
+            }
         }
 
     }
@@ -48,7 +52,6 @@ struct ContentView: View {
     private func flagTapped(_ number: Int) {
         if correctAnswer == number {
             scoreTitle = "You Are Correct"
-            askQuestion()
         } else {
             scoreTitle = "Wrong Try Again"
         }
