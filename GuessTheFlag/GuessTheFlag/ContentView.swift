@@ -22,8 +22,10 @@ struct ContentView: View {
                 VStack {
                     Text("Tap the flag of")
                         .foregroundStyle(.white)
+                        .font(.subheadline)
                     Text(countries[correctAnswer])
                         .foregroundStyle(.white)
+                        .font(.headline)
                 }
                 
                 ForEach(0..<3) { name in
