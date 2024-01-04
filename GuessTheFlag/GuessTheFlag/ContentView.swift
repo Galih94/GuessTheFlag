@@ -16,7 +16,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.gray.ignoresSafeArea()
+            Color.gray
+                .ignoresSafeArea()
+                .blur(radius: 10)
             VStack(spacing: 20) {
                 
                 VStack {
