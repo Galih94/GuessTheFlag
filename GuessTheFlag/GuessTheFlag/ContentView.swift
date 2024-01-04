@@ -57,7 +57,7 @@ struct ContentView: View {
                 .clipShape(.rect(cornerRadius: 50))
                 Spacer()
                 Spacer()
-                Text("SCORE: ???")
+                Text("SCORE: \(scoreValue)")
                     .foregroundStyle(.white)
                     .font(.largeTitle.bold())
                 Spacer()
@@ -67,10 +67,7 @@ struct ContentView: View {
             Button("Continue") {
                 askQuestion()
             }
-        } message: {
-            Text("Currrent score is \(scoreValue)")
         }
-
     }
     
     private func flagTapped(_ number: Int) {
