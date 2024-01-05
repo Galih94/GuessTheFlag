@@ -16,6 +16,9 @@ struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var scoreValue = 0
+    @State private var currentQuestionCount = 0
+    @State private var buttonTitle = ""
+    private let MAX_QUESTION = 8
     
     var body: some View {
         ZStack {
@@ -64,18 +67,28 @@ struct ContentView: View {
             }
             .padding()
         }.alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue") {
+            Button(buttonTitle) {
                 askQuestion()
             }
+        } message: {
+            Text("Currrent score is \(scoreValue)")
         }
     }
     
     private func flagTapped(_ number: Int) {
+        currentQuestionCount += 1
+        if currentQuestionCount == MAX_QUESTION {
+            scoreTitle = "This is the last question, and You"
+            buttonTitle = "Play Again"
+        } else {
+            scoreTitle = "This is the question no. \(currentQuestionCount), and You"
+            buttonTitle = "Continue"
+        }
         if correctAnswer == number {
-            scoreTitle = "You Are Correct"
+            scoreTitle += "Are Correct"
             scoreValue += 1
         } else {
-            scoreTitle = "Wrong Try Again"
+            scoreTitle += "Are Wrong, that is the flag of \(countries[number])"
         }
         showingScore = true
     }
@@ -83,6 +96,11 @@ struct ContentView: View {
     private func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        
+        if currentQuestionCount == MAX_QUESTION {
+            scoreValue = 0
+            currentQuestionCount = 0
+        }
     }
 }
 
