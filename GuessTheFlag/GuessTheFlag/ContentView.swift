@@ -46,6 +46,7 @@ struct ContentView: View {
     @State private var currentQuestionCount = 0
     @State private var buttonTitle = ""
     @State private var animationAmountRotation: [Int: Double] = [:]
+    @State private var animationAmountOpacity: [Int: Double] = [0:1.0, 1:1.0, 2:1.0]
     private let MAX_QUESTION = 8
     
     var body: some View {
@@ -78,6 +79,7 @@ struct ContentView: View {
                                 .flagImageStyle()
                         }
                         .rotation3DEffect(.degrees(animationAmountRotation[number] ?? 0), axis: (x: 0, y: 1, z: 0))
+                        .opacity(animationAmountOpacity[number] ?? 1)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -122,7 +124,11 @@ struct ContentView: View {
             } else {
                 animationAmountRotation[number] = 360
             }
-            
+            animationAmountOpacity.forEach { key, value in
+                if key != number {
+                    animationAmountOpacity[key] = 0.25
+                }
+            }
             
         }
         showingScore = true
@@ -131,7 +137,7 @@ struct ContentView: View {
     private func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
-        
+        animationAmountOpacity = [0:1.0, 1:1.0, 2:1.0]
         if currentQuestionCount == MAX_QUESTION {
             scoreValue = 0
             currentQuestionCount = 0
