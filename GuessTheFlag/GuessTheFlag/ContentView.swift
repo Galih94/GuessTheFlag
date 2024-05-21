@@ -45,6 +45,7 @@ struct ContentView: View {
     @State private var scoreValue = 0
     @State private var currentQuestionCount = 0
     @State private var buttonTitle = ""
+    @State private var animationAmountRotation: [Int: Double] = [:]
     private let MAX_QUESTION = 8
     
     var body: some View {
@@ -76,7 +77,7 @@ struct ContentView: View {
                             Image(countries[number])
                                 .flagImageStyle()
                         }
-                        
+                        .rotation3DEffect(.degrees(animationAmountRotation[number] ?? 0), axis: (x: 0, y: 1, z: 0))
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -114,6 +115,15 @@ struct ContentView: View {
             scoreValue += 1
         } else {
             scoreTitle += "Are Wrong, that is the flag of \(countries[number])"
+        }
+        withAnimation {
+            if let _ = animationAmountRotation[number] {
+                animationAmountRotation[number]! += 360
+            } else {
+                animationAmountRotation[number] = 360
+            }
+            
+            
         }
         showingScore = true
     }
