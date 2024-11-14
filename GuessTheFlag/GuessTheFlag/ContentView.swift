@@ -130,10 +130,10 @@ struct ContentView: View {
             buttonTitle = "Continue"
         }
         if correctAnswer == number {
-            scoreTitle += "Are Correct"
+            scoreTitle += " Are Correct"
             scoreValue += 1
         } else {
-            scoreTitle += "Are Wrong, that is the flag of \(countries[number])"
+            scoreTitle += " Are Wrong, that is the flag of \(countries[number])"
         }
         withAnimation {
             if let _ = animationAmountRotation[number] {
