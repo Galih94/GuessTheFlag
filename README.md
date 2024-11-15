@@ -1,5 +1,7 @@
 # GuessTheFlag
-GuessTheFlag is a simple iOS game where users test their knowledge of world flags. The app displays a country name and three flag options, and the player must guess the correct flag. Each correct answer awards points, while incorrect guesses don't affect the score. A fun way to learn and challenge yourself on flags from around the world!
+GuessTheFlag is a simple iOS game where users test their knowledge of world flags. The app displays a country name and three flag options, and the player must guess the correct flag. Each correct answer awards points, while incorrect guesses don't affect the score.
+
+---
 The source learning is from 2nd project of course "100 Days of SwiftUI" (https://www.hackingwithswift.com/100/swiftui)
 
 ---
